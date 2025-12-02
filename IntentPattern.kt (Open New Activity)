@@ -1,0 +1,10 @@
+// OPEN NEW ACTIVITY
+
+val intent = Intent(this, DetailActivity::class.java)
+intent.putExtra("name", clickedItem.name)
+intent.putExtra("image", clickedItem.image)
+startActivity(intent)
+
+
+val name = intent.getStringExtra("name")
+val image = intent.getIntExtra("image", 0)
