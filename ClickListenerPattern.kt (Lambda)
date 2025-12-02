@@ -3,3 +3,16 @@
 recyclerView.adapter = MyAdapter(items, this) { clickedItem ->
     Toast.makeText(this, "Clicked: ${clickedItem.name}", Toast.LENGTH_SHORT).show()
 }
+
+// Adapter side
+class MyAdapter(
+    private val items: List<MyItem>,
+    private val context: Context,
+    private val onItemClick: (MyItem) -> Unit
+) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val item = items[position]
+        holder.itemView.setOnClickListener { onItemClick(item) }
+    }
+}
