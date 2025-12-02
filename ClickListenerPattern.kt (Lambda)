@@ -1,0 +1,5 @@
+// CLICK LISTENER LAMBDA (EASIEST)
+
+recyclerView.adapter = MyAdapter(items, this) { clickedItem ->
+    Toast.makeText(this, "Clicked: ${clickedItem.name}", Toast.LENGTH_SHORT).show()
+}
